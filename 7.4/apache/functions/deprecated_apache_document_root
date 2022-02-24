@@ -1,0 +1,4 @@
+function apache_document_root() {
+  echo "apache_document_root() is deprecated, use apache_set_document_root()" 1>&2
+  apache_set_document_root $1
+}

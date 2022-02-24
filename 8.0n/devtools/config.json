@@ -1,0 +1,1398 @@
+{
+  "tools": [
+    {
+      "name": "behat",
+      "meta": {
+        "summary": "Helps to test business expectations",
+        "website": "http://behat.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "behat/behat=^3.0"
+        ],
+        "target": "%libDir%/behat",
+        "versionMatch": "behat/behat"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/behat": "%binDirToLibDir%/behat/vendor/bin/behat"
+        }
+      },
+      "test": {
+        "command": [
+          "behat",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "box",
+      "meta": {
+        "summary": "Fast, zero config application bundler with PHARs",
+        "website": "https://github.com/humbug/box"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "humbug/box=^3.13",
+          "jetbrains/phpstorm-stubs=dev-master"
+        ],
+        "target": "%libDir%/box",
+        "versionMatch": "humbug/box"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/box": "%binDirToLibDir%/box/vendor/bin/box"
+        }
+      },
+      "test": {
+        "command": [
+          "box",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "captainhook",
+      "meta": {
+        "summary": "Easy to use and very flexible git hook manager for php developers",
+        "website": "https://github.com/CaptainHookPhp/captainhook"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "captainhook/captainhook"
+        ],
+        "target": "%libDir%/captainhook",
+        "versionMatch": "captainhook/captainhook"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/captainhook": "%binDirToLibDir%/captainhook/vendor/bin/captainhook"
+        }
+      },
+      "test": {
+        "command": [
+          "captainhook",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "churn",
+      "meta": {
+        "summary": "Discovers good candidates for refactoring",
+        "website": "https://github.com/bmitch/churn-php"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "bmitch/churn-php"
+        ],
+        "target": "%libDir%/churn",
+        "versionMatch": "bmitch/churn-php"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/churn": "%binDirToLibDir%/churn/vendor/bin/churn"
+        }
+      },
+      "test": {
+        "command": [
+          "churn",
+          "list"
+        ]
+      }
+    },
+    {
+      "name": "codeception",
+      "meta": {
+        "summary": "Full-stack testing PHP framework",
+        "website": "https://codeception.com/"
+      },
+      "handler": {
+        "type": "curl",
+        "url": "http://codeception.com/codecept.phar",
+        "target": "%binDir%/codecept"
+      },
+      "version": {
+        "command": [
+          "%binDir%/codecept",
+          "--version"
+        ]
+      },
+      "test": {
+        "command": [
+          "codecept",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "composer-normalize",
+      "meta": {
+        "summary": "Provides a composer plugin for normalizing composer.json",
+        "website": "https://github.com/ergebnis/composer-normalize"
+      },
+      "handler": {
+        "type": "curl",
+        "url": "https://github.com/ergebnis/composer-normalize/releases/download/2.15.0/composer-normalize.phar",
+        "target": "%binDir%/composer-normalize"
+      },
+      "version": {
+        "command": [
+          "%binDir%/composer-normalize",
+          "--version"
+        ]
+      },
+      "test": {
+        "command": [
+          "composer-normalize",
+          "--version",
+          "--no-interaction"
+        ]
+      }
+    },
+    {
+      "name": "composer-require-checker",
+      "meta": {
+        "summary": "Direct composer dependencies checker",
+        "website": "https://github.com/maglnet/ComposerRequireChecker"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "maglnet/composer-require-checker"
+        ],
+        "target": "%libDir%/composer-require-checker",
+        "versionMatch": "maglnet/composer-require-checker"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/composer-require-checker": "%binDirToLibDir%/composer-require-checker/vendor/bin/composer-require-checker"
+        }
+      },
+      "test": {
+        "command": [
+          "composer-require-checker",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "composer-unused",
+      "meta": {
+        "summary": "Show unused composer dependencies by scanning your code",
+        "website": "https://github.com/composer-unused/composer-unused"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "icanhazstring/composer-unused"
+        ],
+        "target": "%libDir%/composer-unused",
+        "versionMatch": "icanhazstring/composer-unused"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/composer-unused": "%binDirToLibDir%/composer-unused/vendor/bin/composer-unused"
+        }
+      },
+      "test": {
+        "exists": "composer-unused"
+      }
+    },
+    {
+      "name": "coverageChecker",
+      "meta": {
+        "summary": "Applies QA tools to run on a single pull request",
+        "website": "https://github.com/exussum12/coverageChecker"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "exussum12/coverage-checker"
+        ],
+        "target": "%libDir%/coverage-checker",
+        "versionMatch": "exussum12/coverage-checker"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/coveragechecker": "%binDirToLibDir%/coverage-checker/vendor/bin/diffFilter",
+          "%binDir%/diffFilter": "%binDirToLibDir%/coverage-checker/vendor/bin/diffFilter"
+        }
+      },
+      "test": {
+        "command": [
+          "diffFilter",
+          "-v"
+        ]
+      }
+    },
+    {
+      "name": "dephpend",
+      "meta": {
+        "summary": "Detect flaws in your architecture",
+        "website": "https://dephpend.com/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "dephpend/dephpend"
+        ],
+        "ignorePlatformReqs": true,
+        "target": "%libDir%/dephpend",
+        "versionMatch": "dephpend/dephpend"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/dephpend": "%binDirToLibDir%/dephpend/vendor/bin/dephpend"
+        }
+      },
+      "test": {
+        "command": [
+          "dephpend",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "deptrac",
+      "meta": {
+        "summary": "Enforces dependency rules between software layers",
+        "website": "https://github.com/qossmic/deptrac"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "qossmic/deptrac-shim"
+        ],
+        "target": "%libDir%/deptrac",
+        "versionMatch": "qossmic/deptrac-shim"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/deptrac": "%binDirToLibDir%/deptrac/vendor/bin/deptrac"
+        }
+      },
+      "test": {
+        "command": [
+          "deptrac",
+          "list"
+        ]
+      }
+    },
+    {
+      "name": "ecc",
+      "meta": {
+        "summary": "Environment Consistency Checker",
+        "website": "https://github.com/ngabor84/ecc"
+      },
+      "handler": {
+        "type": "curl",
+        "url": "https://github.com/ngabor84/ecc/releases/download/0.1.0/ecc.phar",
+        "target": "%binDir%/ecc",
+        "fixedVersion": "0.1.0"
+      },
+      "test": {
+        "command": [
+          "ecc",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "graph-composer",
+      "meta": {
+        "summary": "Dependency graph visualization for composer.json (PHP + Composer)",
+        "website": "https://github.com/clue/graph-composer"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "clue/graph-composer"
+        ],
+        "target": "%libDir%/graph-composer",
+        "versionMatch": "clue/graph-composer"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/graph-composer": "%binDirToLibDir%/graph-composer/vendor/bin/graph-composer"
+        }
+      },
+      "test": {
+        "command": [
+          "graph-composer",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "grumphp",
+      "meta": {
+        "summary": "A PHP code-quality tool",
+        "website": "https://github.com/phpro/grumphp"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpro/grumphp"
+        ],
+        "target": "%libDir%/grumphp",
+        "versionMatch": "phpro/grumphp"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/grumphp": "%binDirToLibDir%/grumphp/vendor/bin/grumphp"
+        }
+      },
+      "test": {
+        "command": [
+          "grumphp",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "infection",
+      "meta": {
+        "summary": "AST based PHP Mutation Testing Framework",
+        "website": "https://infection.github.io/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "infection/infection"
+        ],
+        "target": "%libDir%/infection",
+        "versionMatch": "infection/infection"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/infection": "%binDirToLibDir%/infection/vendor/bin/infection"
+        }
+      },
+      "test": {
+        "command": [
+          "infection",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "local-php-security-checker",
+      "meta": {
+        "summary": "The Local PHP Security Checker is a command line tool that checks if your PHP application depends on PHP packages with known security vulnerabilities.",
+        "website": "https://github.com/fabpot/local-php-security-checker"
+      },
+      "handler": {
+        "type": "curl",
+        "url": "https://api.github.com/repos/fabpot/local-php-security-checker/releases",
+        "target": "%binDir%/local-php-security-checker",
+        "match": [
+          "%arch%",
+          "%os%"
+        ],
+        "matchMap": {
+          "x86_64": "amd64",
+          "aarch64": "arm64"
+        }
+      },
+      "test": {
+        "command": [
+          "local-php-security-checker",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "parallel-lint",
+      "meta": {
+        "summary": "Checks PHP file syntax",
+        "website": "https://github.com/JakubOnderka/PHP-Parallel-Lint"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "php-parallel-lint/php-parallel-lint"
+        ],
+        "target": "%libDir%/php-parallel-lint",
+        "versionMatch": "php-parallel-lint/php-parallel-lint"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/parallel-lint": "%binDirToLibDir%/php-parallel-lint/vendor/bin/parallel-lint"
+        }
+      },
+      "test": {
+        "command": [
+          "parallel-lint",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "paratest",
+      "meta": {
+        "summary": "Parallel testing for PHPUnit",
+        "website": "https://github.com/paratestphp/paratest/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "brianium/paratest"
+        ],
+        "target": "%libDir%/paratest",
+        "versionMatch": "brianium/paratest"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/paratest": "%binDirToLibDir%/paratest/vendor/bin/paratest"
+        }
+      },
+      "test": {
+        "command": [
+          "paratest",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "pdepend",
+      "meta": {
+        "summary": "Static Analysis Tool",
+        "website": "https://pdepend.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "pdepend/pdepend"
+        ],
+        "target": "%libDir%/pdepend",
+        "versionMatch": "pdepend/pdepend"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/pdepend": "%binDirToLibDir%/pdepend/vendor/bin/pdepend"
+        }
+      },
+      "test": {
+        "command": [
+          "pdepend",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phan",
+      "meta": {
+        "summary": "Static Analysis Tool",
+        "website": "https://github.com/phan/phan"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phan/phan"
+        ],
+        "target": "%libDir%/phan",
+        "versionMatch": "phan/phan"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phan": "%binDirToLibDir%/phan/vendor/bin/phan"
+        }
+      },
+      "test": {
+        "command": [
+          "phan",
+          "-v"
+        ]
+      }
+    },
+    {
+      "name": "phing",
+      "meta": {
+        "summary": "PHP project build system",
+        "website": "https://github.com/phingofficial/phing"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phing/phing"
+        ],
+        "target": "%libDir%/phing",
+        "versionMatch": "phing/phing"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phing": "%binDirToLibDir%/phing/vendor/bin/phing"
+        }
+      },
+      "test": {
+        "command": [
+          "phing",
+          "-v"
+        ]
+      }
+    },
+    {
+      "name": "php-coveralls",
+      "meta": {
+        "summary": "PHP client library for Coveralls API.",
+        "website": "https://github.com/php-coveralls/php-coveralls"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "php-coveralls/php-coveralls",
+          "symfony/console=^5.0"
+        ],
+        "target": "%libDir%/php-coveralls",
+        "versionMatch": "php-coveralls/php-coveralls"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-coveralls": "%binDirToLibDir%/php-coveralls/vendor/bin/php-coveralls"
+        }
+      },
+      "test": {
+        "command": [
+          "php-coveralls",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "php-cs-fixer",
+      "meta": {
+        "summary": "PHP Coding Standards Fixer",
+        "website": "http://cs.sensiolabs.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "friendsofphp/php-cs-fixer"
+        ],
+        "target": "%libDir%/php-cs-fixer",
+        "versionMatch": "friendsofphp/php-cs-fixer"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-cs-fixer": "%binDirToLibDir%/php-cs-fixer/vendor/bin/php-cs-fixer"
+        }
+      },
+      "test": {
+        "command": [
+          "php-cs-fixer",
+          "list"
+        ]
+      }
+    },
+    {
+      "name": "php-doc-check",
+      "meta": {
+        "summary": "Uses complexity metrics to determine which functions need documentation",
+        "website": "https://github.com/nielsdeblaauw/php-doc-check"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "niels-de-blaauw/php-doc-check"
+        ],
+        "target": "%libDir%/php-doc-check",
+        "versionMatch": "niels-de-blaauw/php-doc-check"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-doc-check": "%binDirToLibDir%/php-doc-check/vendor/bin/php-doc-check"
+        }
+      },
+      "test": {
+        "exists": "php-doc-check"
+      }
+    },
+    {
+      "name": "php-formatter",
+      "meta": {
+        "summary": "Custom coding standards fixer",
+        "website": "https://github.com/mmoreram/php-formatter"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "mmoreram/php-formatter"
+        ],
+        "target": "%libDir%/php-formatter",
+        "versionMatch": "mmoreram/php-formatter"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-formatter": "%binDirToLibDir%/php-formatter/vendor/bin/php-formatter"
+        }
+      },
+      "test": {
+        "command": [
+          "php-formatter",
+          "list"
+        ]
+      }
+    },
+    {
+      "name": "php-scoper",
+      "constraints": {
+        "skip": true
+      },
+      "meta": {
+        "summary": "Prefixes all PHP namespaces in a file/directory to isolate the code bundled in PHARs.",
+        "website": "https://github.com/humbug/php-scoper"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "humbug/php-scoper"
+        ],
+        "target": "%libDir%/php-scoper",
+        "versionMatch": "humbug/php-scoper"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-scoper": "%binDirToLibDir%/php-scoper/vendor/bin/php-scoper"
+        }
+      },
+      "test": {
+        "command": [
+          "php-scoper",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "php-semver-checker",
+      "meta": {
+        "summary": "Suggests a next version according to semantic versioning",
+        "website": "https://github.com/tomzx/php-semver-checker"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "tomzx/php-semver-checker"
+        ],
+        "target": "%libDir%/php-semver-checker",
+        "versionMatch": "tomzx/php-semver-checker"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-semver-checker": "%binDirToLibDir%/php-semver-checker/vendor/bin/php-semver-checker"
+        }
+      },
+      "test": {
+        "command": [
+          "php-semver-checker",
+          "list"
+        ]
+      }
+    },
+    {
+      "name": "phpbench",
+      "meta": {
+        "summary": "PHP Benchmarking framework",
+        "website": "https://github.com/phpbench/phpbench"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpbench/phpbench"
+        ],
+        "target": "%libDir%/phpbench",
+        "versionMatch": "phpbench/phpbench"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpbench": "%binDirToLibDir%/phpbench/vendor/bin/phpbench"
+        }
+      },
+      "test": {
+        "command": [
+          "phpbench"
+        ]
+      }
+    },
+    {
+      "name": "phpbu",
+      "meta": {
+        "summary": "PHP Backup Utility",
+        "website": "https://github.com/sebastianfeldmann/phpbu"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpbu/phpbu"
+        ],
+        "target": "%libDir%/phpbu",
+        "versionMatch": "phpbu/phpbu"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpbu": "%binDirToLibDir%/phpbu/vendor/bin/phpbu"
+        }
+      },
+      "test": {
+        "command": [
+          "phpbu",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpca",
+      "meta": {
+        "summary": "Finds usage of non-built-in extensions",
+        "website": "https://github.com/wapmorgan/PhpCodeAnalyzer"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "wapmorgan/php-code-analyzer"
+        ],
+        "target": "%libDir%/php-code-analyzer",
+        "versionMatch": "wapmorgan/php-code-analyzer"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-code-analyzer": "%binDirToLibDir%/php-code-analyzer/vendor/bin/phpca"
+        }
+      },
+      "test": {
+        "command": [
+          "php-code-analyzer",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "phpcpd",
+      "meta": {
+        "summary": "Copy/Paste Detector",
+        "website": "https://github.com/sebastianbergmann/phpcpd"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "sebastian/phpcpd"
+        ],
+        "target": "%libDir%/phpcpd",
+        "versionMatch": "sebastian/phpcpd"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpcpd": "%binDirToLibDir%/phpcpd/vendor/bin/phpcpd"
+        }
+      },
+      "test": {
+        "command": [
+          "phpcpd",
+          "-v"
+        ]
+      }
+    },
+    {
+      "name": "phpcs-legacy",
+      "meta": {
+        "summary": "Detects coding standard violations",
+        "website": "https://github.com/squizlabs/PHP_CodeSniffer"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "brainbits/phpcs-standard=^4.0",
+          "satesh/phpcs-gitlab-report"
+        ],
+        "target": "%libDir%/phpcs-legacy",
+        "versionMatch": "squizlabs/php_codesniffer"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpcs-legacy": "%binDirToLibDir%/phpcs-legacy/vendor/bin/phpcs",
+          "%binDir%/phpcbf-legacy": "%binDirToLibDir%/phpcs-legacy/vendor/bin/phpcbf"
+        },
+        "postInstall": [
+          [
+            "%libDir%/phpcs-legacy/vendor/bin/phpcs",
+            "--config-set",
+            "installed_paths",
+            "%finalLibDir%/phpcs-legacy/vendor/escapestudios/symfony2-coding-standard,%finalLibDir%/phpcs-legacy/vendor/slevomat/coding-standard,%finalLibDir%/phpcs-legacy/vendor/brainbits/phpcs-standard/BrainbitsCodingStandard,%finalLibDir%/phpcs-legacy/vendor/doctrine/coding-standard/lib/Doctrine,%finalLibDir%/phpcs-legacy/vendor/brainbits/phpcs-standard/BrainbitsCodingStandardTest"
+          ],
+          [
+            "%libDir%/phpcs-legacy/vendor/bin/phpcs",
+            "--config-set",
+            "default_standard",
+            "BrainbitsCodingStandard"
+          ]
+        ]
+      },
+      "test": {
+        "command": [
+          "phpcs-legacy",
+          "--help"
+        ]
+      }
+    },
+    {
+      "name": "phpcs",
+      "meta": {
+        "summary": "Detects coding standard violations",
+        "website": "https://github.com/squizlabs/PHP_CodeSniffer"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "brainbits/phpcs-standard=^5.0",
+          "satesh/phpcs-gitlab-report"
+        ],
+        "target": "%libDir%/phpcs",
+        "versionMatch": "squizlabs/php_codesniffer"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpcs": "%binDirToLibDir%/phpcs/vendor/bin/phpcs",
+          "%binDir%/phpcbf": "%binDirToLibDir%/phpcs/vendor/bin/phpcbf"
+        },
+        "postInstall": [
+          [
+            "%libDir%/phpcs/vendor/bin/phpcs",
+            "--config-set",
+            "installed_paths",
+            "%finalLibDir%/phpcs/vendor/slevomat/coding-standard,%finalLibDir%/phpcs/vendor/brainbits/phpcs-standard/Brainbits,%finalLibDir%/phpcs/vendor/doctrine/coding-standard/lib/Doctrine,%finalLibDir%/phpcs/vendor/brainbits/phpcs-standard/BrainbitsCodingStandard,%finalLibDir%/phpcs/vendor/brainbits/phpcs-standard/BrainbitsCodingStandardTest"
+          ],
+          [
+            "%libDir%/phpcs/vendor/bin/phpcs",
+            "--config-set",
+            "default_standard",
+            "Brainbits"
+          ]
+        ]
+      },
+      "test": {
+        "command": [
+          "phpcs",
+          "--help"
+        ]
+      }
+    },
+    {
+      "name": "phpdd",
+      "meta": {
+        "summary": "PhpDeprecationDetector - analyzer of PHP code to search usages of deprecated functionality in newer interpreter versions - deprecations detector.",
+        "website": "https://github.com/wapmorgan/PhpDeprecationDetector"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "wapmorgan/php-deprecation-detector"
+        ],
+        "target": "%libDir%/php-deprecation-detector",
+        "versionMatch": "wapmorgan/php-deprecation-detector"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/php-deprecation-detector": "%binDirToLibDir%/php-deprecation-detector/vendor/bin/phpdd"
+        }
+      },
+      "test": {
+        "command": [
+          "php-deprecation-detector",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "phpdocumentor",
+      "meta": {
+        "summary": "Documentation generator",
+        "website": "https://www.phpdoc.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "createProject": "phpdocumentor/phpdocumentor",
+        "target": "%libDir%/phpdocumentor",
+        "versionMatch": "phpdocumentor/phpdocumentor"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpdocumentor": "%binDirToLibDir%/phpdocumentor/bin/phpdoc"
+        }
+      },
+      "test": {
+        "command": [
+          "phpdocumentor",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpinsights",
+      "meta": {
+        "summary": "The perfect starting point to analyze the code quality of your PHP projects",
+        "website": "https://phpinsights.com/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "nunomaduro/phpinsights",
+          "brainbits/phpcs-standard=^5.0"
+        ],
+        "target": "%libDir%/phpinsights",
+        "versionMatch": "nunomaduro/phpinsights"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpinsights": "%binDirToLibDir%/phpinsights/vendor/bin/phpinsights"
+        }
+      },
+      "test": {
+        "command": [
+          "phpinsights",
+          "--help"
+        ]
+      }
+    },
+    {
+      "name": "phploc",
+      "meta": {
+        "summary": "A tool for quickly measuring the size of a PHP project",
+        "website": "https://github.com/sebastianbergmann/phploc"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phploc/phploc"
+        ],
+        "target": "%libDir%/phploc",
+        "versionMatch": "phploc/phploc"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phploc": "%binDirToLibDir%/phploc/vendor/bin/phploc"
+        }
+      },
+      "test": {
+        "command": [
+          "phploc",
+          "-v"
+        ]
+      }
+    },
+    {
+      "name": "phpmd",
+      "meta": {
+        "summary": "A tool for finding problems in PHP code",
+        "website": "https://phpmd.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpmd/phpmd"
+        ],
+        "target": "%libDir%/phpmd",
+        "versionMatch": "phpmd/phpmd"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpmd": "%binDirToLibDir%/phpmd/vendor/bin/phpmd"
+        }
+      },
+      "test": {
+        "command": [
+          "phpmd",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpmetrics",
+      "meta": {
+        "summary": "Static Analysis Tool",
+        "website": "http://www.phpmetrics.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpmetrics/phpmetrics"
+        ],
+        "target": "%libDir%/phpmetrics",
+        "versionMatch": "phpmetrics/phpmetrics"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpmetrics": "%binDirToLibDir%/phpmetrics/vendor/bin/phpmetrics"
+        }
+      },
+      "test": {
+        "command": [
+          "phpmetrics",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpspec",
+      "meta": {
+        "summary": "SpecBDD Framework",
+        "website": "http://www.phpspec.net/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpspec/phpspec"
+        ],
+        "target": "%libDir%/phpspec",
+        "versionMatch": "phpspec/phpspec"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpspec": "%binDirToLibDir%/phpspec/vendor/bin/phpspec"
+        }
+      },
+      "test": {
+        "command": [
+          "phpspec",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpstan",
+      "constraints": {
+        "skipIf": "php_version_id >= 80000"
+      },
+      "meta": {
+        "summary": "Static Analysis Tool",
+        "website": "https://github.com/phpstan/phpstan"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpstan/phpstan=^1.0",
+          "phpstan/phpstan-beberlei-assert=^1.0",
+          "phpstan/phpstan-deprecation-rules=^1.0",
+          "phpstan/phpstan-doctrine=^1.0",
+          "phpstan/phpstan-phpunit=^1.0",
+          "phpstan/phpstan-strict-rules=^1.0",
+          "phpstan/phpstan-symfony=^1.0",
+          "phpstan/phpstan-webmozart-assert=^1.0",
+          "brainbits/phpstan-rules=^3.0",
+          "ergebnis/phpstan-rules=^1.0",
+          "jangregor/phpstan-prophecy=^1.0",
+          "thecodingmachine/safe=<2.0",
+          "thecodingmachine/phpstan-safe-rule=^1.0",
+          "thecodingmachine/phpstan-strict-rules=^1.0"
+        ],
+        "target": "%libDir%/phpstan",
+        "versionMatch": "phpstan/phpstan"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpstan": "%binDirToLibDir%/phpstan/vendor/bin/phpstan"
+        }
+      },
+      "test": {
+        "command": [
+          "phpstan",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpstan",
+      "constraints": {
+        "skipIf": "php_version_id < 80000"
+      },
+      "meta": {
+        "summary": "Static Analysis Tool",
+        "website": "https://github.com/phpstan/phpstan"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpstan/phpstan=^1.0",
+          "phpstan/phpstan-beberlei-assert=^1.0",
+          "phpstan/phpstan-deprecation-rules=^1.0",
+          "phpstan/phpstan-doctrine=^1.0",
+          "phpstan/phpstan-phpunit=^1.0",
+          "phpstan/phpstan-strict-rules=^1.0",
+          "phpstan/phpstan-symfony=^1.0",
+          "phpstan/phpstan-webmozart-assert=^1.0",
+          "brainbits/phpstan-rules=^3.0",
+          "ergebnis/phpstan-rules=^1.0",
+          "jangregor/phpstan-prophecy=^1.0",
+          "slam/phpstan-extensions=^6.0",
+          "symplify/phpstan-rules=^10.0",
+          "thecodingmachine/safe=<2.0",
+          "thecodingmachine/phpstan-safe-rule=^1.0",
+          "thecodingmachine/phpstan-strict-rules=^1.0"
+        ],
+        "target": "%libDir%/phpstan",
+        "versionMatch": "phpstan/phpstan"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpstan": "%binDirToLibDir%/phpstan/vendor/bin/phpstan"
+        }
+      },
+      "test": {
+        "command": [
+          "phpstan",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpstan012",
+      "constraints": {
+        "skipIf": "php_version_id < 80000"
+      },
+      "meta": {
+        "summary": "Static Analysis Tool",
+        "website": "https://github.com/phpstan/phpstan"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpstan/phpstan=^0.12",
+          "phpstan/phpstan-beberlei-assert=^0.12",
+          "phpstan/phpstan-deprecation-rules=^0.12",
+          "phpstan/phpstan-doctrine=^0.12",
+          "phpstan/phpstan-phpunit=^0.12",
+          "phpstan/phpstan-strict-rules=^0.12",
+          "phpstan/phpstan-symfony=^0.12",
+          "phpstan/phpstan-webmozart-assert=^0.12",
+          "brainbits/phpstan-rules=^2.0",
+          "ergebnis/phpstan-rules=^0.15",
+          "ikvasnica/phpstan-clean-test=^0.3",
+          "jangregor/phpstan-prophecy=^0.8",
+          "pepakriz/phpstan-exception-rules=^0.11",
+          "slam/phpstan-extensions=^5.0",
+          "thecodingmachine/phpstan-safe-rule=^1.0",
+          "thecodingmachine/phpstan-strict-rules=^0.12"
+        ],
+        "target": "%libDir%/phpstan012",
+        "versionMatch": "phpstan/phpstan"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpstan012": "%binDirToLibDir%/phpstan012/vendor/bin/phpstan"
+        }
+      },
+      "test": {
+        "command": [
+          "phpstan012",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpunit",
+      "meta": {
+        "summary": "The PHP testing framework",
+        "website": "https://phpunit.de/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpunit/phpunit",
+          "phpspec/prophecy-phpunit"
+        ],
+        "target": "%libDir%/phpunit",
+        "versionMatch": "phpunit/phpunit"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpunit": "%binDirToLibDir%/phpunit/vendor/bin/phpunit",
+          "%binDir%/phpunit9": "%binDirToLibDir%/phpunit/vendor/bin/phpunit"
+        }
+      },
+      "test": {
+        "command": [
+          "phpunit",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpunit8",
+      "constraints": {
+        "skipIf": "php_version_id >= 80000"
+      },
+      "meta": {
+        "summary": "The PHP testing framework",
+        "website": "https://phpunit.de/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpunit/phpunit",
+          "phpspec/prophecy-phpunit"
+        ],
+        "target": "%libDir%/phpunit8",
+        "versionMatch": "phpunit/phpunit"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpunit8": "%binDirToLibDir%/phpunit8/vendor/bin/phpunit"
+        }
+      },
+      "test": {
+        "command": [
+          "phpunit8",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "phpunit90",
+      "constraints": {
+        "skipIf": "php_version_id >= 80000"
+      },
+      "meta": {
+        "summary": "The PHP testing framework",
+        "website": "https://phpunit.de/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "phpunit/phpunit=9.0.*",
+          "phpspec/prophecy-phpunit=^1.1"
+        ],
+        "target": "%libDir%/phpunit90",
+        "versionMatch": "phpunit/phpunit"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/phpunit90": "%binDirToLibDir%/phpunit90/vendor/bin/phpunit"
+        }
+      },
+      "test": {
+        "command": [
+          "phpunit90",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "prophecy-phpunit",
+      "meta": {
+        "summary": "PhpUnit test case integrating Prophecy",
+        "website": "https://github.com/phpspec/prophecy-phpunit"
+      },
+      "handler": {
+        "type": "curl",
+        "url": "https://packages.brainbits.net/phar/prophecy-phpunit-extension-v2.0.1.phar",
+        "target": "%libDir%/phpunit.d/prophecy-phpunit-extension.phar",
+        "fixedVersion": "2.0.1"
+      },
+      "test": {
+        "exists": "%finalLibDir%/phpunit.d/prophecy-phpunit-extension.phar"
+      }
+    },
+    {
+      "name": "psalm",
+      "meta": {
+        "summary": "Finds errors in PHP applications",
+        "website": "https://getpsalm.org/"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "vimeo/psalm"
+        ],
+        "target": "%libDir%/psalm",
+        "versionMatch": "vimeo/psalm"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/psalm": "%binDirToLibDir%/psalm/vendor/bin/psalm"
+        }
+      },
+      "test": {
+        "command": [
+          "psalm",
+          "-h"
+        ]
+      }
+    },
+    {
+      "name": "rector",
+      "meta": {
+        "summary": "Rector instantly upgrades and refactors the PHP code of your application.",
+        "website": "https://github.com/rectorphp/rector"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "rector/rector"
+        ],
+        "target": "%libDir%/rector",
+        "versionMatch": "rector/rector"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/rector": "%binDirToLibDir%/rector/vendor/bin/rector"
+        }
+      },
+      "test": {
+        "command": [
+          "rector",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "sarb",
+      "meta": {
+        "summary": "Static Analysis Results Baseliner",
+        "website": "https://github.com/DaveLiddament/sarb"
+      },
+      "handler": {
+        "type": "composer",
+        "require": [
+          "dave-liddament/sarb"
+        ],
+        "target": "%libDir%/sarb",
+        "versionMatch": "dave-liddament/sarb"
+      },
+      "hooks": {
+        "symlinks": {
+          "%binDir%/sarb": "%binDirToLibDir%/sarb/vendor/bin/sarb"
+        }
+      },
+      "test": {
+        "command": [
+          "sarb",
+          "--version"
+        ]
+      }
+    },
+    {
+      "name": "symfony-cli",
+      "meta": {
+        "summary": "The Symfony CLI tool.",
+        "website": "https://github.com/symfony-cli/symfony-cli"
+      },
+      "handler": {
+        "type": "apk",
+        "url": "https://api.github.com/repos/symfony-cli/symfony-cli/releases",
+        "match": [
+          "%arch%",
+          ".apk$"
+        ]
+      },
+      "test": {
+        "command": [
+          "symfony",
+          "-h"
+        ]
+      }
+    }
+  ]
+}

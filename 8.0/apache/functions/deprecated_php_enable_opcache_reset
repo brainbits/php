@@ -1,0 +1,9 @@
+function php_enable_opcache_reset() {
+  echo "php_enable_opcache_reset() is deprecated, use apache_php_enable_opcache_reset()" 1>&2
+
+  target=$1
+  uri=$2
+
+  printf "#!/usr/bin/env bash\n\necho \"<?php opcache_reset();\" > \"$target\"\ncurl \"$uri\"\nrm \"$target\"\n" > /usr/local/bin/opcache_reset.sh
+  chmod +x /usr/local/bin/opcache_reset.sh
+}

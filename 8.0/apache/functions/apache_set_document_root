@@ -1,0 +1,3 @@
+function apache_set_document_root() {
+  sed -i "s#^DocumentRoot .*#DocumentRoot \"$1\"#g" /etc/apache2/httpd.conf
+}

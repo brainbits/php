@@ -1,0 +1,4 @@
+function php_memory_limit() {
+  echo "php_memory_limit() is deprecated, use apache_set_php_memory_limit()" 1>&2
+  apache_set_php_memory_limit $1
+}

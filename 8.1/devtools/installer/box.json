@@ -1,0 +1,13 @@
+{
+    "directories": ["src"],
+    "finder": [
+        {
+            "name": ["*.php", "*.xsd", "LICENSE"],
+            "exclude": ["Tests", "tests"],
+            "in": "vendor"
+        }
+    ],
+    "compactors": "KevinGH\\Box\\Compactor\\Php",
+    "main": "bin/installer",
+    "output": "installer.phar"
+}

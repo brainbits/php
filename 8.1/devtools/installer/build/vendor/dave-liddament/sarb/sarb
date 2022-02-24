@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Static Analysis Results Baseliner (sarb).
+ *
+ * (c) Dave Liddament
+ *
+ * For the full copyright and licence information please view the LICENSE file distributed with this source code.
+ */
+
+
+declare(strict_types=1);
+
+use DaveLiddament\StaticAnalysisResultsBaseliner\Framework\Container\Container;
+
+
+function loadAutoloader(): void
+{
+    $autoloaderLocations = [
+        __DIR__ . '/vendor/autoload.php',
+        __DIR__ . '/../../autoload.php',
+    ];
+    
+    foreach($autoloaderLocations as $autoloaderLocation) {
+        if (file_exists($autoloaderLocation)) {
+            require($autoloaderLocation);
+	    return;
+        }
+    }
+
+    die("Can not find autoloader");
+}
+
+loadAutoloader();
+
+$container = new Container();
+$application = $container->getApplication();
+
+$application->run();
